@@ -18,4 +18,9 @@ public class HolidayService {
     public List<HolidayResponse> getHolidaysByYear(String year) {
         return holidayFeignClient.getHolidaysByYear(year);
     }
+
+    //TODO
+    public boolean isHolidayToday() {
+        return false;
+    }
 }
