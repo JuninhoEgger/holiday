@@ -1,6 +1,7 @@
 package com.egger.holiday.service;
 
 import com.egger.holiday.feign.HolidayFeignClient;
+import com.egger.holiday.mapper.HolidayMapper;
 import com.egger.holiday.model.response.HolidayResponse;
 import org.springframework.stereotype.Service;
 
@@ -10,17 +11,20 @@ import java.util.List;
 public class HolidayService {
 
     private final HolidayFeignClient holidayFeignClient;
+    private final HolidayMapper holidayMapper;
 
-    public HolidayService(HolidayFeignClient holidayFeignClient) {
+    public HolidayService(HolidayFeignClient holidayFeignClient, HolidayMapper holidayMapper) {
         this.holidayFeignClient = holidayFeignClient;
+        this.holidayMapper = holidayMapper;
     }
 
     public List<HolidayResponse> getHolidaysByYear(String year) {
-        return holidayFeignClient.getHolidaysByYear(year);
+        return holidayMapper
+                .toHolidayResponse(holidayFeignClient.getHolidaysByYear(year));
     }
 
     //TODO
-    public boolean isHolidayToday() {
-        return false;
+    private void isHolidayToday() {
     }
+
 }

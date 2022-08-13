@@ -7,7 +7,7 @@ import static com.egger.holiday.HolidayApplication.main;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-class HolidayApplicationTests {
+class HolidayResponseApplicationTests {
 
     @Test
     void contextLoads() {

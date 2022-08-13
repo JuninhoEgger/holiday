@@ -1,6 +1,6 @@
 package com.egger.holiday.feign;
 
-import com.egger.holiday.model.response.HolidayResponse;
+import com.egger.holiday.model.response.Holiday;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +13,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public interface HolidayFeignClient {
 
     @GetMapping(path = "/{year}", produces = APPLICATION_JSON_VALUE)
-    List<HolidayResponse> getHolidaysByYear(@PathVariable("year") String year);
+    List<Holiday> getHolidaysByYear(@PathVariable("year") String year);
 
 }

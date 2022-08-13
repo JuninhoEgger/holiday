@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.egger</groupId>
-    <artifactId>holiday</artifactId>
+    <artifactId>holidayResponse</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>holiday</name>
     <description>Projeto que consome APIs relacionadas a feriados</description>
