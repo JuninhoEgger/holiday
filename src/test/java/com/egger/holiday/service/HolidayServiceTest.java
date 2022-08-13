@@ -31,9 +31,11 @@ class HolidayServiceTest {
         //Given
         String year = "2022";
         List<Holiday> holidays = mockListHoliday();
+        List<HolidayResponse> holidayResponse = mockHolidayResponse();
 
         //When
         when(holidayFeignClient.getHolidaysByYear(year)).thenReturn(holidays);
+        when(holidayMapper.toHolidayResponse(holidays)).thenReturn(holidayResponse);
         List<HolidayResponse> actual = holidayService.getHolidaysByYear(year);
 
         //Then
@@ -49,6 +51,15 @@ class HolidayServiceTest {
         List<Holiday> holidayList = new ArrayList<>();
         holidayList.add(holiday);
         return holidayList;
+    }
+
+    private List<HolidayResponse> mockHolidayResponse() {
+        List<HolidayResponse> holidayResponseList = new ArrayList<>();
+        HolidayResponse holidayResponse = new HolidayResponse();
+        holidayResponse.setDate("2022-01-01");
+        holidayResponse.setName("Confraternização mundial");
+        holidayResponseList.add(holidayResponse);
+        return holidayResponseList;
     }
 
 }
