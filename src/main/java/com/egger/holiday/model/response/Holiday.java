@@ -13,6 +13,15 @@ public class Holiday {
     @Schema(description = "O tipo do feriado", example = "national")
     private String type;
 
+    public Holiday() {
+    }
+
+    public Holiday(String date, String name, String type) {
+        this.date = date;
+        this.name = name;
+        this.type = type;
+    }
+
     public String getDate() {
         return date;
     }

@@ -5,6 +5,14 @@ public class HolidayResponse {
     private String date;
     private String name;
 
+    public HolidayResponse() {
+    }
+
+    public HolidayResponse(String date, String name) {
+        this.date = date;
+        this.name = name;
+    }
+
     public String getDate() {
         return date;
     }

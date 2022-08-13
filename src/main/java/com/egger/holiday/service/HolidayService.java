@@ -23,8 +23,4 @@ public class HolidayService {
                 .toHolidayResponse(holidayFeignClient.getHolidaysByYear(year));
     }
 
-    //TODO
-    private void isHolidayToday() {
-    }
-
 }
